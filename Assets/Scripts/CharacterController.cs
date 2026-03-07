@@ -29,7 +29,7 @@ public class CharacterController : MonoBehaviour
         isGrounded = Physics2D.OverlapCircle(feetPosition.position, groundDistance, groundLayer);
 
         //Constant horizontal speed
-        rb.linearVelocity = new Vector2(movementSpeed, rb.linearVelocity.y);
+        //rb.linearVelocity = new Vector2(movementSpeed, rb.linearVelocity.y);
 
         //Resetting double jump
         if (isGrounded)
