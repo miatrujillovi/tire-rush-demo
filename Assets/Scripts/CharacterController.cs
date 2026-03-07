@@ -3,8 +3,11 @@ using UnityEngine.InputSystem;
 
 public class CharacterController : MonoBehaviour
 {
-    [Header("Player Settings")]
-    [SerializeField, Tooltip("How high will the player jump based on it's rigibody physics.")] private float jumpForce = 10f;
+    [Header("Run Settings")]
+    [SerializeField] private float movementSpeed = 5f;
+    [Space]
+    [Header("Jump Settings")]
+    [SerializeField, Tooltip("How high will the player jump based on it's rigibody physics.")] private float jumpForce = 11f;
     [SerializeField, Tooltip("Will contain the layer for the ground in order to help player detect the floor better.")] private LayerMask groundLayer;
     [SerializeField, Tooltip("Should contain a son inside the player with the position of it's feet.")] private Transform feetPosition;
     [SerializeField, Tooltip("Radious for how far away the player has to be from the ground in order to be considered Grounded.")] private float groundDistance = 0.25f;
@@ -12,7 +15,8 @@ public class CharacterController : MonoBehaviour
 
     private Rigidbody2D rb;
     private bool isGrounded = false;
-    private bool isJumping = false;
+    private bool doubleJumpUsed = false;
+    [HideInInspector] public bool canDoubleJump = false;
 
     private void Start()
     {
@@ -24,12 +28,32 @@ public class CharacterController : MonoBehaviour
         //Making the isGrounded work if the player's feet is in contact with the floor.
         isGrounded = Physics2D.OverlapCircle(feetPosition.position, groundDistance, groundLayer);
 
-        //Making the player Jump
-        if (isGrounded && jumpAction.action.WasPressedThisFrame())
+        //Constant horizontal speed
+        rb.linearVelocity = new Vector2(movementSpeed, rb.linearVelocity.y);
+
+        //Resetting double jump
+        if (isGrounded)
         {
-            isJumping = true;
-            rb.linearVelocity = Vector2.up * jumpForce;
-            Debug.Log("Jump!");
+            doubleJumpUsed = false;
         }
+
+        //Jumping Logic
+        if (jumpAction.action.WasPressedThisFrame())
+        {
+            //First Jump
+            if (isGrounded)
+            {
+                rb.linearVelocity = new Vector2(rb.linearVelocity.x, jumpForce);
+                //Debug.Log("Jump!");
+            }
+            //Double Jump
+            else if (canDoubleJump && !doubleJumpUsed)
+            {
+                rb.linearVelocity = new Vector2(rb.linearVelocity.x, jumpForce);
+                doubleJumpUsed = true;
+                //Debug.Log("Double Jump!");
+            }
+        }
+
     }
 }

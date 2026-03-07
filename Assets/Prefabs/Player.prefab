@@ -180,6 +180,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 93087c7153a031c449abb2bf179fcc4e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::CharacterController
+  movementSpeed: 5
   jumpForce: 11
   groundLayer:
     serializedVersion: 2
@@ -187,6 +188,7 @@ MonoBehaviour:
   feetPosition: {fileID: 5556379937391992204}
   groundDistance: 0.25
   jumpAction: {fileID: -2099379676528639254, guid: 052faaac586de48259a63d0c4782560b, type: 3}
+  canDoubleJump: 0
 --- !u!1 &1791889441702531214
 GameObject:
   m_ObjectHideFlags: 0
