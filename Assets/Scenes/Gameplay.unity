@@ -130,7 +130,7 @@ GameObject:
   - component: {fileID: 204932293}
   - component: {fileID: 204932292}
   m_Layer: 0
-  m_Name: obstaculo1
+  m_Name: obstaculo1 - estepicursor
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -177,7 +177,7 @@ GameObject:
   - component: {fileID: 450407576}
   - component: {fileID: 450407575}
   m_Layer: 0
-  m_Name: obstaculo2
+  m_Name: obstaculo2 - valla doble
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -413,6 +413,7 @@ MonoBehaviour:
   - {fileID: 204932292}
   - {fileID: 450407575}
   - {fileID: 1099101667}
+  - {fileID: 1004812688}
 --- !u!4 &682955580
 Transform:
   m_ObjectHideFlags: 0
@@ -429,6 +430,7 @@ Transform:
   - {fileID: 204932293}
   - {fileID: 450407576}
   - {fileID: 1099101668}
+  - {fileID: 1004812687}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &807068491
@@ -558,6 +560,53 @@ MonoBehaviour:
   m_ShadowLayerMask: 1
   m_RenderingLayers: 1
   m_ShadowRenderingLayers: 1
+--- !u!1 &1004812686
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1004812687}
+  - component: {fileID: 1004812688}
+  m_Layer: 0
+  m_Name: obstaculo4 - valla
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1004812687
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1004812686}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 682955580}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1004812688
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1004812686}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 010fa7f7c05ec6f44920ae0c5b4a06b5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::ObjectPool
+  poolName: 4
+  prefab: {fileID: 5402252697798125479, guid: a81cbdc2f3e3c98409deb09cd2b12aaa, type: 3}
+  poolSize: 10
 --- !u!1 &1099101666
 GameObject:
   m_ObjectHideFlags: 0
@@ -569,7 +618,7 @@ GameObject:
   - component: {fileID: 1099101668}
   - component: {fileID: 1099101667}
   m_Layer: 0
-  m_Name: obstaculo3
+  m_Name: obstaculo3 - camioneta
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -842,6 +891,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
+    - target: {fileID: 4190165863905090278, guid: 9612a706120185d4a92e3d676785b1cf, type: 3}
+      propertyPath: m_Constraints
+      value: 7
+      objectReference: {fileID: 0}
     - target: {fileID: 5722480062809173818, guid: 9612a706120185d4a92e3d676785b1cf, type: 3}
       propertyPath: m_LocalPosition.x
       value: -7.19
@@ -1087,6 +1140,7 @@ MonoBehaviour:
   - 1
   - 2
   - 3
+  - 4
   spawnX: 10
   spawnY: -1.6
   minSpawnTime: 1
