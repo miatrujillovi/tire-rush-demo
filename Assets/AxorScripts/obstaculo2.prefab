@@ -101,7 +101,7 @@ GameObject:
   m_Component:
   - component: {fileID: 9156448377314623500}
   - component: {fileID: 5579128586509779173}
-  - component: {fileID: 1662711132600391366}
+  - component: {fileID: 1378774186280122621}
   m_Layer: 0
   m_Name: obstaculo2
   m_TagString: Untagged
@@ -138,7 +138,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 505925fe893f0854f977be15102655f7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::MoveLeft
---- !u!114 &1662711132600391366
+  disableX: -15
+  returnToPool: 0
+--- !u!114 &1378774186280122621
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
