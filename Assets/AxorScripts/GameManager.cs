@@ -9,10 +9,15 @@ public class GameManager : MonoBehaviour
     public float acceleration = 0.02f;
 
     public float distanceTravelled;
-    public bool gameOver;
+    public bool gameOver = false;
 
-    void Awake()
+    private void Awake()
     {
+        if (instance != null && instance != this)
+        {
+            Destroy(gameObject);
+            return;
+        }
         instance = this;
     }
 
@@ -25,6 +30,11 @@ public class GameManager : MonoBehaviour
 
             distanceTravelled += speed * Time.deltaTime;
         }
+    }
+
+    public void SlowSpeed(float _slowMultiplier)
+    {
+        speed *= _slowMultiplier;
     }
 
     public int GetDifficulty()

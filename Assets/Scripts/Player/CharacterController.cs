@@ -3,9 +3,9 @@ using UnityEngine.InputSystem;
 
 public class CharacterController : MonoBehaviour
 {
-    [Header("Run Settings")]
+    /*[Header("Run Settings")]
     [SerializeField] private float movementSpeed = 5f;
-    [Space]
+    [Space]*/
     [Header("Jump Settings")]
     [SerializeField, Tooltip("How high will the player jump based on it's rigibody physics.")] private float jumpForce = 11f;
     [SerializeField, Tooltip("Will contain the layer for the ground in order to help player detect the floor better.")] private LayerMask groundLayer;

@@ -130,7 +130,7 @@ GameObject:
   - component: {fileID: 204932293}
   - component: {fileID: 204932292}
   m_Layer: 0
-  m_Name: obstaculo1
+  m_Name: obstaculo1 - estepicursor
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -177,7 +177,7 @@ GameObject:
   - component: {fileID: 450407576}
   - component: {fileID: 450407575}
   m_Layer: 0
-  m_Name: obstaculo2
+  m_Name: obstaculo2 - valla doble
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -801,7 +801,7 @@ GameObject:
   - component: {fileID: 1099101668}
   - component: {fileID: 1099101667}
   m_Layer: 0
-  m_Name: obstaculo3
+  m_Name: obstaculo3 - camioneta
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
