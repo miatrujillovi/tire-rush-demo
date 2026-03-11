@@ -7,7 +7,7 @@ public class MoveLeft : MonoBehaviour
 
     void Update()
     {
-        if (GameManager.instance.gameOver)
+        if (!GameManager.instance.gameStarted || GameManager.instance.gameOver)
             return;
 
         transform.position += Vector3.left * GameManager.instance.speed * Time.deltaTime;
