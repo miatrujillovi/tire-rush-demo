@@ -413,7 +413,6 @@ MonoBehaviour:
   - {fileID: 204932292}
   - {fileID: 450407575}
   - {fileID: 1099101667}
-  - {fileID: 1004812688}
 --- !u!4 &682955580
 Transform:
   m_ObjectHideFlags: 0
@@ -1140,7 +1139,6 @@ MonoBehaviour:
   - 1
   - 2
   - 3
-  - 4
   spawnX: 10
   spawnY: -1.6
   minSpawnTime: 1

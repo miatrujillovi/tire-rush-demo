@@ -4,7 +4,12 @@ public class GameManager : MonoBehaviour
 {
     public static GameManager instance;
 
-    public static bool gameOver = false;
+    public float speed = 6f;
+    public float maxSpeed = 18f;
+    public float acceleration = 0.02f;
+
+    public float distanceTravelled;
+    public bool gameOver = false;
 
     private void Awake()
     {
@@ -16,10 +21,37 @@ public class GameManager : MonoBehaviour
         instance = this;
     }
 
+    void Update()
+    {
+        if (!gameOver)
+        {
+            if (speed < maxSpeed)
+                speed += acceleration * Time.deltaTime;
+
+            distanceTravelled += speed * Time.deltaTime;
+        }
+    }
+
+    public void SlowSpeed(float _slowMultiplier)
+    {
+        speed *= _slowMultiplier;
+    }
+
+    public int GetDifficulty()
+    {
+        if (distanceTravelled < 200)
+            return 0;
+
+        if (distanceTravelled < 500)
+            return 1;
+
+        return 2;
+    }
+
     public void GameOver()
     {
         gameOver = true;
-        GameSpeed.speed = 0;
+        //GameSpeed.speed = 0;
         Debug.Log("Game Over");
     }
 }

@@ -20,7 +20,7 @@ public class CollidingWithEstepicursor : MonoBehaviour
         // If player collides with the obstacle
         else
         {
-            GameSpeed.instance.SlowSpeed(slowMultiplier);
+            GameManager.instance.SlowSpeed(slowMultiplier);
             gameObject.SetActive(false);
             //Debug.Log("Player slowed!");
         }
