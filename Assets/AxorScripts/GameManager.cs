@@ -1,4 +1,6 @@
 using UnityEngine;
+using UnityEngine.InputSystem;
+using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
@@ -7,9 +9,15 @@ public class GameManager : MonoBehaviour
     public float speed = 6f;
     public float maxSpeed = 18f;
     public float acceleration = 0.02f;
-
+    [Space]
+    [Header("Game Over References")]
+    [SerializeField] private GameObject gameOverScreen;
+    [SerializeField] private CharacterController characterController;
+    [Space]
     public float distanceTravelled;
     public bool gameOver = false;
+
+    private InputActionReference jumpAction;
 
     private void Awake()
     {
@@ -21,6 +29,11 @@ public class GameManager : MonoBehaviour
         instance = this;
     }
 
+    private void Start()
+    {
+        jumpAction = characterController.jumpAction;
+    }
+
     void Update()
     {
         if (!gameOver)
@@ -30,6 +43,28 @@ public class GameManager : MonoBehaviour
 
             distanceTravelled += speed * Time.deltaTime;
         }
+
+        if (gameOver)
+        {
+            GameOver();
+            if (jumpAction.action.WasPressedThisFrame())
+            {
+                RestartGame();
+            }
+        }
+    }
+
+    private void GameOver()
+    {
+        gameOverScreen.SetActive(true);
+        characterController.enabled = false;
+    }
+
+    public void RestartGame()
+    {
+        gameOverScreen.SetActive(false);
+        characterController.enabled = true;
+        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
 
     public void SlowSpeed(float _slowMultiplier)
