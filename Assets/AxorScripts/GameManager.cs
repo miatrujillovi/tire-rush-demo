@@ -47,11 +47,4 @@ public class GameManager : MonoBehaviour
 
         return 2;
     }
-
-    public void GameOver()
-    {
-        gameOver = true;
-        //GameSpeed.speed = 0;
-        Debug.Log("Game Over");
-    }
 }
