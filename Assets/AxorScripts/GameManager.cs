@@ -19,6 +19,9 @@ public class GameManager : MonoBehaviour
 
     private InputActionReference jumpAction;
 
+    public bool gameStarted = false; // NUEVO
+    public GameObject startText;     // Texto "Presiona Space"
+
     private void Awake()
     {
         if (instance != null && instance != this)
