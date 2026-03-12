@@ -6,8 +6,8 @@ public class CollidingWithObstacle : MonoBehaviour
     {
         if (collision.CompareTag("Player"))
         {
-            //GameManager.instance.GameOver();
-            Debug.Log("Player collided with: " + gameObject.name + " and lost.");
+            GameManager.instance.gameOver = true;
+            //Debug.Log("Player collided with: " + gameObject.name + " and lost.");
         }
     }
 }

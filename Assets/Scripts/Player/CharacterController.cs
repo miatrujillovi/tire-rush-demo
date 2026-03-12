@@ -11,7 +11,7 @@ public class CharacterController : MonoBehaviour
     [SerializeField, Tooltip("Will contain the layer for the ground in order to help player detect the floor better.")] private LayerMask groundLayer;
     [SerializeField, Tooltip("Should contain a son inside the player with the position of it's feet.")] private Transform feetPosition;
     [SerializeField, Tooltip("Radious for how far away the player has to be from the ground in order to be considered Grounded.")] private float groundDistance = 0.25f;
-    [SerializeField, Tooltip("Input Action connected with the Jump")] private InputActionReference jumpAction;
+    [SerializeField, Tooltip("Input Action connected with the Jump")] public InputActionReference jumpAction;
 
     private Rigidbody2D rb;
     private bool isGrounded = false;
