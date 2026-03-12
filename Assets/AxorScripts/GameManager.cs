@@ -15,6 +15,7 @@ public class GameManager : MonoBehaviour
     [SerializeField] private CharacterController characterController;
     [SerializeField] private CharacterAnimations characterAnimations;
     [SerializeField] private GameObject scoreScreen;
+    [SerializeField] private MenuAnimation menuAnimation;
     [Space]
     public float distanceTravelled;
     public bool gameOver = false;
@@ -48,8 +49,8 @@ public class GameManager : MonoBehaviour
             {
                 gameStarted = true;
 
-                if (startText != null)
-                    startText.SetActive(false);
+                /*if (startText != null)
+                    startText.SetActive(false);*/
             }
 
             return;
@@ -58,6 +59,7 @@ public class GameManager : MonoBehaviour
         // Lógica normal del juego
         if (!gameOver)
         {
+            menuAnimation.DisappearObjectsFromMain();
             scoreScreen.SetActive(true);
             characterAnimations.StartRotation();
             if (speed < maxSpeed)
