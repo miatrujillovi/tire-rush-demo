@@ -14,6 +14,7 @@ public class CharacterAnimations : MonoBehaviour
 
     public void StopRotation()
     {
-        rotationTween.Kill();
+        //rotationTween.Kill();
+        DOTween.Kill(rotationTween);
     }
 }
