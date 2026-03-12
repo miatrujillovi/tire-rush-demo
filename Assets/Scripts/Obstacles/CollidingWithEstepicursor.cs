@@ -1,0 +1,28 @@
+using UnityEngine;
+
+public class CollidingWithEstepicursor : MonoBehaviour
+{
+    [SerializeField] private float slowMultiplier = 0.5f;
+
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (!collision.gameObject.CompareTag("Player"))
+            return;
+
+        Rigidbody2D playerRB = collision.gameObject.GetComponent<Rigidbody2D>();
+
+        // If player is falling on top of the obstacle
+        if (playerRB.linearVelocity.y < 0)
+        {
+            gameObject.SetActive(false);
+            //Debug.Log("Player stepped on the Estepicursor");
+        }
+        // If player collides with the obstacle
+        else
+        {
+            GameManager.instance.SlowSpeed(slowMultiplier);
+            gameObject.SetActive(false);
+            //Debug.Log("Player slowed!");
+        }
+    }
+}
