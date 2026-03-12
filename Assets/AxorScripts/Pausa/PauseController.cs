@@ -20,6 +20,15 @@ public class PauseController : MonoBehaviour
 
     void Update()
     {
+        if (pauseMenu.activeSelf)
+        {
+            if (Keyboard.current.spaceKey.wasPressedThisFrame)
+            {
+                ResumeGame();
+            }
+            return;
+        }
+
         if (!inPauseZone)
         {
             holdTimer = 0;
