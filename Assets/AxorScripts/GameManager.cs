@@ -14,6 +14,7 @@ public class GameManager : MonoBehaviour
     [SerializeField] private GameObject gameOverScreen;
     [SerializeField] private CharacterController characterController;
     [SerializeField] private CharacterAnimations characterAnimations;
+    [SerializeField] private GameObject scoreScreen;
     [Space]
     public float distanceTravelled;
     public bool gameOver = false;
@@ -57,6 +58,7 @@ public class GameManager : MonoBehaviour
         // Lógica normal del juego
         if (!gameOver)
         {
+            scoreScreen.SetActive(true);
             characterAnimations.StartRotation();
             if (speed < maxSpeed)
                 speed += acceleration * Time.deltaTime;
@@ -83,6 +85,7 @@ public class GameManager : MonoBehaviour
 
     public void RestartGame()
     {
+        scoreScreen.SetActive(false);
         gameOverScreen.SetActive(false);
         characterController.enabled = true;
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
