@@ -26,8 +26,8 @@ Transform:
   m_GameObject: {fileID: 2116322700756604771}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 1.3859, z: 0}
-  m_LocalScale: {x: 1, y: 3.771931, z: 1}
+  m_LocalPosition: {x: 0, y: 0.7874, z: 0}
+  m_LocalScale: {x: 0.3, y: 0.24367584, z: 0.3}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 9156448377314623500}
@@ -79,10 +79,10 @@ SpriteRenderer:
   m_GlobalIlluminationMeshLod: 0
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 2
   m_MaskInteraction: 0
-  m_Sprite: {fileID: -2413806693520163455, guid: a86470a33a6bf42c4b3595704624658b, type: 3}
-  m_Color: {r: 0.21819878, g: 1, b: 0, a: 1}
+  m_Sprite: {fileID: 21300000, guid: 98503d0bc875bec48bbf3d9af190ba6a, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -141,6 +141,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 505925fe893f0854f977be15102655f7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::MoveLeft
+  disableX: -15
+  returnToPool: 0
 --- !u!114 &1662711132600391366
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -188,7 +190,7 @@ BoxCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: -0.00000011920929, y: 1.4251945}
+  m_Offset: {x: 0.020821184, y: 0.815054}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -198,7 +200,7 @@ BoxCollider2D:
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  m_Size: {x: 1.1184113, y: 3.850389}
+  m_Size: {x: 0.49377018, y: 2.8299932}
   m_EdgeRadius: 0
 --- !u!61 &5170120723151670537
 BoxCollider2D:
@@ -234,7 +236,7 @@ BoxCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: 0, y: 1.3987308}
+  m_Offset: {x: 0.020821363, y: 0.81357646}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -244,7 +246,7 @@ BoxCollider2D:
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  m_Size: {x: 1, y: 3.7974615}
+  m_Size: {x: 0.42533034, y: 2.743752}
   m_EdgeRadius: 0
 --- !u!114 &5483901136009343223
 MonoBehaviour:
@@ -339,7 +341,7 @@ SpriteRenderer:
   m_GlobalIlluminationMeshLod: 0
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 2
   m_MaskInteraction: 0
   m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
