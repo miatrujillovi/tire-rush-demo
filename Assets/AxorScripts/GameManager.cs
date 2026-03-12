@@ -118,4 +118,12 @@ public class GameManager : MonoBehaviour
 
         return 2;
     }
+
+    public void ReduceScore(float amount)
+    {
+        distanceTravelled -= amount;
+
+        if (distanceTravelled < 0)
+            distanceTravelled = 0;
+    }
 }

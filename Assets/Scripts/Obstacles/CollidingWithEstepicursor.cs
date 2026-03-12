@@ -4,6 +4,7 @@ public class CollidingWithEstepicursor : MonoBehaviour
 {
     [SerializeField] private float slowMultiplier = 0.5f;
     [SerializeField] private float slowDuration = 1.5f;
+    [SerializeField] private float scorePenalty = 20f;
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
@@ -22,6 +23,7 @@ public class CollidingWithEstepicursor : MonoBehaviour
         else
         {
             GameManager.instance.SlowSpeed(slowMultiplier, slowDuration);
+            GameManager.instance.ReduceScore(scorePenalty);
             gameObject.SetActive(false);
             //Debug.Log("Player slowed!");
         }
