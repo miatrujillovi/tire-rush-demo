@@ -35,6 +35,9 @@ public class ObstacleSpawner : MonoBehaviour
 
     void Update()
     {
+        if (!GameManager.instance.gameStarted || GameManager.instance.gameOver)
+            return;
+
         float distance = GameManager.instance.distanceTravelled;
 
         if (distance >= nextPauseZone)
@@ -132,7 +135,6 @@ public class ObstacleSpawner : MonoBehaviour
                 new Vector3(spawnX, spawnY, 0);
         }
 
-        // empujar el siguiente spawn de obst culo
         nextSpawnDistance =
             GameManager.instance.distanceTravelled + pauseZoneSafeDistance;
     }

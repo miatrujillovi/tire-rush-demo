@@ -36,6 +36,21 @@ public class GameManager : MonoBehaviour
 
     void Update()
     {
+        // Esperar a que el jugador presione Space
+        if (!gameStarted)
+        {
+            if (Keyboard.current.spaceKey.wasPressedThisFrame)
+            {
+                gameStarted = true;
+
+                if (startText != null)
+                    startText.SetActive(false);
+            }
+
+            return;
+        }
+
+        // Lógica normal del juego
         if (!gameOver)
         {
             if (speed < maxSpeed)
