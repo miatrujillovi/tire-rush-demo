@@ -1,3 +1,4 @@
+using System.Collections;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.SceneManagement;
@@ -23,6 +24,7 @@ public class GameManager : MonoBehaviour
 
     public bool gameStarted = false; // NUEVO
     public GameObject startText;     // Texto "Presiona Space"
+    Coroutine slowRoutine;
 
     private void Awake()
     {
@@ -91,9 +93,19 @@ public class GameManager : MonoBehaviour
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
 
-    public void SlowSpeed(float _slowMultiplier)
+    public void SlowSpeed(float _slowMultiplier, float duration)
     {
-        speed *= _slowMultiplier;
+        if (slowRoutine != null)
+            StopCoroutine(slowRoutine);
+
+        slowRoutine = StartCoroutine(SlowSpeedCoroutine(_slowMultiplier, duration));
+    }
+
+    IEnumerator SlowSpeedCoroutine(float slowMultiplier, float duration)
+    {
+        speed *= slowMultiplier;
+
+        yield return new WaitForSeconds(duration);
     }
 
     public int GetDifficulty()

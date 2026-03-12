@@ -3,6 +3,7 @@ using UnityEngine;
 public class CollidingWithEstepicursor : MonoBehaviour
 {
     [SerializeField] private float slowMultiplier = 0.5f;
+    [SerializeField] private float slowDuration = 1.5f;
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
@@ -20,7 +21,7 @@ public class CollidingWithEstepicursor : MonoBehaviour
         // If player collides with the obstacle
         else
         {
-            GameManager.instance.SlowSpeed(slowMultiplier);
+            GameManager.instance.SlowSpeed(slowMultiplier, slowDuration);
             gameObject.SetActive(false);
             //Debug.Log("Player slowed!");
         }
