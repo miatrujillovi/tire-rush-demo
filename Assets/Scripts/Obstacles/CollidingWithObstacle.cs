@@ -6,6 +6,7 @@ public class CollidingWithObstacle : MonoBehaviour
     {
         if (collision.CompareTag("Player"))
         {
+            AudioManager.Instance.PlayCollision();
             GameManager.instance.gameOver = true;
             //Debug.Log("Player collided with: " + gameObject.name + " and lost.");
         }

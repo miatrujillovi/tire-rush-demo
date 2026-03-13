@@ -22,6 +22,7 @@ public class CollidingWithEstepicursor : MonoBehaviour
         // If player collides with the obstacle
         else
         {
+            AudioManager.Instance.PlaySpecialCollision();
             GameManager.instance.SlowSpeed(slowMultiplier, slowDuration);
             GameManager.instance.ReduceScore(scorePenalty);
             gameObject.SetActive(false);

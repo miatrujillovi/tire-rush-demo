@@ -19,6 +19,7 @@ public class GameManager : MonoBehaviour
     [Space]
     public float distanceTravelled;
     public bool gameOver = false;
+    bool gameOverSoundPlayed = false;
 
     private InputActionReference jumpAction;
 
@@ -49,6 +50,8 @@ public class GameManager : MonoBehaviour
             if (Keyboard.current.spaceKey.wasPressedThisFrame)
             {
                 gameStarted = true;
+
+                AudioManager.Instance.PlayGameStart();
 
                 if (startText != null)
                     startText.SetActive(false);
@@ -83,6 +86,12 @@ public class GameManager : MonoBehaviour
         characterAnimations.StopRotation();
         gameOverScreen.SetActive(true);
         characterController.enabled = false;
+
+        if (!gameOverSoundPlayed)
+        {
+            AudioManager.Instance.PlayGameOver();
+            gameOverSoundPlayed = true;
+        }
     }
 
     public void RestartGame()
