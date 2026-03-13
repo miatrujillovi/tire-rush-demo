@@ -16,6 +16,8 @@ public class GameManager : MonoBehaviour
     [SerializeField] private CharacterController characterController;
     [SerializeField] private CharacterAnimations characterAnimations;
     [SerializeField] private GameObject scoreScreen;
+    [SerializeField] private MenuAnimation menuAnimation;
+    [SerializeField] private CameraShake cameraShake;
     [Space]
     public float distanceTravelled;
     public bool gameOver = false;
@@ -50,8 +52,8 @@ public class GameManager : MonoBehaviour
             {
                 gameStarted = true;
 
-                if (startText != null)
-                    startText.SetActive(false);
+                /*if (startText != null)
+                    startText.SetActive(false);*/
             }
 
             return;
@@ -60,6 +62,7 @@ public class GameManager : MonoBehaviour
         // Lógica normal del juego
         if (!gameOver)
         {
+            menuAnimation.DisappearObjectsFromMain();
             scoreScreen.SetActive(true);
             characterAnimations.StartRotation();
             if (speed < maxSpeed)
@@ -95,6 +98,8 @@ public class GameManager : MonoBehaviour
 
     public void SlowSpeed(float _slowMultiplier, float duration)
     {
+        cameraShake.Shake(0.2f, 0.2f);
+
         if (slowRoutine != null)
             StopCoroutine(slowRoutine);
 
