@@ -44,6 +44,7 @@ public class CharacterController : MonoBehaviour
             if (isGrounded)
             {
                 rb.linearVelocity = new Vector2(rb.linearVelocity.x, jumpForce);
+                AudioManager.Instance.PlayJump();
                 //Debug.Log("Jump!");
             }
             //Double Jump
@@ -51,6 +52,7 @@ public class CharacterController : MonoBehaviour
             {
                 rb.linearVelocity = new Vector2(rb.linearVelocity.x, jumpForce);
                 doubleJumpUsed = true;
+                AudioManager.Instance.PlayJump();
                 //Debug.Log("Double Jump!");
             }
         }
