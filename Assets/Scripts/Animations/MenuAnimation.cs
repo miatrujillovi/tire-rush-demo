@@ -28,7 +28,7 @@ public class MenuAnimation : MonoBehaviour
     {
         foreach (GameObject obj in leftObjects)
         {
-            obj.transform.DOMoveX(obj.transform.position.x - moveDistance, duration).SetEase(Ease.OutCubic);
+            obj.transform.DOMoveX(obj.transform.position.x - 10, 10f).SetEase(Ease.OutCubic);
         }
     }
 }
