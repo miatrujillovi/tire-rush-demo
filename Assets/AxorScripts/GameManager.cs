@@ -17,6 +17,7 @@ public class GameManager : MonoBehaviour
     [SerializeField] private CharacterAnimations characterAnimations;
     [SerializeField] private GameObject scoreScreen;
     [SerializeField] private MenuAnimation menuAnimation;
+    [SerializeField] private CameraShake cameraShake;
     [Space]
     public float distanceTravelled;
     public bool gameOver = false;
@@ -97,6 +98,8 @@ public class GameManager : MonoBehaviour
 
     public void SlowSpeed(float _slowMultiplier, float duration)
     {
+        cameraShake.Shake(0.2f, 0.2f);
+
         if (slowRoutine != null)
             StopCoroutine(slowRoutine);
 
