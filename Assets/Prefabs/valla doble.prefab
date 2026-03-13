@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 4306678437416953121}
   - component: {fileID: -6489941972181057053}
   m_Layer: 0
-  m_Name: Valla doble
+  m_Name: valla doble
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -202,7 +202,7 @@ SpriteRenderer:
   m_GlobalIlluminationMeshLod: 0
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 3
+  m_SortingOrder: 4
   m_MaskInteraction: 0
   m_Sprite: {fileID: 21300000, guid: 469e4ed45f635b4459ceaec0551f2162, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -295,7 +295,7 @@ SpriteRenderer:
   m_GlobalIlluminationMeshLod: 0
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 3
+  m_SortingOrder: 4
   m_MaskInteraction: 0
   m_Sprite: {fileID: 21300000, guid: 7f2b9603568761c4998a6c609994d9ef, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
