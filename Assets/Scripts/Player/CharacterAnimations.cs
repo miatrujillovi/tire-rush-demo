@@ -11,7 +11,8 @@ public class CharacterAnimations : MonoBehaviour
     {
         if (rotationTween != null)
             rotationTween.Kill();
-        rotationTween = transform.DORotate(new Vector3(0, 0, -360), rotationSpeed, RotateMode.FastBeyond360).SetEase(Ease.Linear).SetLoops(-1, LoopType.Incremental);
+        rotationTween = transform.DORotate(new Vector3(0, 0, -360), rotationSpeed, RotateMode.FastBeyond360).SetRelative(true).
+            SetEase(Ease.Linear).SetLoops(-1, LoopType.Incremental);
     }
 
     public void StopRotation()

@@ -106,7 +106,7 @@ public class GameManager : MonoBehaviour
 
     public void SlowSpeed(float _slowMultiplier, float duration)
     {
-        cameraShake.Shake(0.2f, 0.2f);
+        cameraShake.Shake(1f, 0.3f);
 
         if (slowRoutine != null)
             StopCoroutine(slowRoutine);
